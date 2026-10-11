@@ -3,7 +3,6 @@ package uk.ac.westminster.products_api.controller;
 public class Person {
     private String name;
     private String email;
-    private String gg;
 
     public Person() {}
 
