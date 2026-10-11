@@ -3,6 +3,7 @@ package uk.ac.westminster.products_api.controller;
 public class Person {
     private String name;
     private String email;
+    private String gg;
 
     public Person() {}
 
@@ -25,4 +26,5 @@ public class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
