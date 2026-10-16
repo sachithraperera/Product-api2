@@ -4,6 +4,7 @@ package uk.ac.westminster.products_api.controller;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -14,10 +15,19 @@ public class ProductService {
     public List <Product> getAllProducts(){
         return products;
     }
-    public Product addproduct(Product product){
+    public Product addProducts(Product product){
         product.setId(nextId++);
         products.add(product);
         return product;
 
     }
+    public Optional<Product> getProductById(Long id){
+        return products.stream()
+                .filter(p ->p.getId().equals(id) )
+                .findFirst();
+    }
+    public void deleteProduct(Long id) {
+        products.removeIf(p -> p.getId().equals(id));
+    }
+
 }
