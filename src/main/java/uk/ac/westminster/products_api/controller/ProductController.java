@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-@RestController
+//request mapping - url path defined for controller
+@RestController //create rest apis handles http request and send responses
 public class ProductController {
 
     @Autowired
@@ -16,13 +16,13 @@ public class ProductController {
         return productService.getAllProducts();
 
     }
-    @GetMapping("/products/{id}")
-    public Product getProductById(@PathVariable Long id) {
+    @GetMapping("/products/{id}") //getmapping read
+    public Product getProductById(@PathVariable Long id) {//pathvarible mean URL
         return productService.getProductById(id).orElse(null);
     }
 
-    @PostMapping("/products")
-    public Product addProduct(@RequestBody Product product){
+    @PostMapping("/products")//postmapping create
+    public Product addProduct(@RequestBody Product product){//add requestbody deserialization
         return productService.addProducts(product);
     }
 

@@ -15,16 +15,17 @@ public class ProductService {
     public List <Product> getAllProducts(){
         return products;
     }
+
     public Product addProducts(Product product){
         product.setId(nextId++);
         products.add(product);
         return product;
 
     }
-    public Optional<Product> getProductById(Long id){
-        return products.stream()
-                .filter(p ->p.getId().equals(id) )
-                .findFirst();
+    public Optional<Product> getProductById(Long id){//Optional maybe or may not
+        return products.stream() //list through ysnsws
+                .filter(products ->products.getId().equals(id) ) //equals
+                .findFirst();// yanakota match wena eka ganawa
     }
     public void deleteProduct(Long id) {
         products.removeIf(p -> p.getId().equals(id));
@@ -34,5 +35,7 @@ public class ProductService {
                 .filter(p -> p.getName().contains(name))
                 .toList();
     }
+
+    //products.add(new Product("Sachithra",12)) add using to add Arraylist
 
 }

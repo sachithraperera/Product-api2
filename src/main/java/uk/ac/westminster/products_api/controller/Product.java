@@ -2,7 +2,7 @@ package uk.ac.westminster.products_api.controller;
 
 public class Product {
 
-    private Long id;
+    private Long id;//Long can hold null values where long can't
     private String name;
     private double price;
 
