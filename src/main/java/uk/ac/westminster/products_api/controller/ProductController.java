@@ -27,7 +27,7 @@ public class ProductController {
     //@PostMapping maps HTTP POST requests to the method.
     //POST is commonly used to create a resource.
     @PostMapping("/products")
-    public Product addProduct(@RequestBody Product product) { //RequestBody-It tells Spring to read the
+    public Product addProduct(@RequestBody DigitalProduct product) { //RequestBody-It tells Spring to read the
         // HTTP request body and deserialize the JSON into a Product object.
         return productService.addProducts(product);
     }

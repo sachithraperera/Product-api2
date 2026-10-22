@@ -12,6 +12,18 @@ public class ProductService {
     private List<Product> products =new ArrayList<>();
     private Long nextId = 1L;
 
+    public ProductService(){
+        products.add(new DigitalProduct(nextId++,
+                "VirusGuard",
+                4.50,
+                "*#hhtps.jdhgdj",
+                23.9));
+        products.add(new PhysicalProduct(nextId++,
+                "MacBookM3",
+                1200.45,
+                3,
+                "16x8"));
+    }
     public List <Product> getAllProducts(){
         return products;
     }

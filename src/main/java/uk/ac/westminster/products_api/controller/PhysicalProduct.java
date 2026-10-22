@@ -5,7 +5,7 @@ public class PhysicalProduct extends Product {
     private String dimensions;
 
     public PhysicalProduct(){
-    }
+    }//Spring Boot uses Jackson to convert JSON into Java objects (deserialization).
 
     public PhysicalProduct(Long id, String name, double price,double weight,String dimensions){
         super(id,name,price);
