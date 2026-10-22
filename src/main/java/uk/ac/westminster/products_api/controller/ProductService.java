@@ -30,10 +30,11 @@ public class ProductService {
     public void deleteProduct(Long id) {
         products.removeIf(p -> p.getId().equals(id));
     }
+
     public List<Product> findByName(String name) {
         return products.stream()
-                .filter(p -> p.getName().contains(name))
-                .toList();
+                .filter(p -> p.getName().contains(name)) //string contains another string kiyala balanwa
+                .toList(); //It collects the filtered results into a new List.
     }
 
     //products.add(new Product("Sachithra",12)) add using to add Arraylist
