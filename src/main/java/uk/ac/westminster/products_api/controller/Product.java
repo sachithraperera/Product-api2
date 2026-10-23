@@ -1,5 +1,14 @@
 package uk.ac.westminster.products_api.controller;
 
+
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+@JsonSubTypes({
+        @JsonSubTypes.Type(DigitalProduct.class),
+        @JsonSubTypes.Type(PhysicalProduct.class)
+})
 public class Product {
 
     private Long id;//Long can hold null values where long can't

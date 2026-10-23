@@ -42,8 +42,6 @@ public class HelloController {
 
         p1.setEmail("ashdgw@gmail.com");
         p1.setName("sachithra");
-
         return p1;
-
     }
 }
