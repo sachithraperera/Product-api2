@@ -1,55 +1,53 @@
-package uk.ac.westminster.products_api.controller;
+    package uk.ac.westminster.products_api.controller;
 
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+    import com.fasterxml.jackson.annotation.JsonSubTypes;
+    import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
-@JsonSubTypes({
-        @JsonSubTypes.Type(DigitalProduct.class),
-        @JsonSubTypes.Type(PhysicalProduct.class)
-})
-public abstract class Product {
+    @JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+    @JsonSubTypes({
+            @JsonSubTypes.Type(DigitalProduct.class),
+            @JsonSubTypes.Type(PhysicalProduct.class)
+    })
+    public abstract class Product {
 
-    private Long id;//Long can hold null values where long can't
-    private String name;
-    private double price;
+        private Long id;//Long can hold null values where long can't
+        private String name;
+        private double price;
 
-    public Product() {
+        public Product() {
+        }
+
+        public Product(Long id, String name, double price) {
+            this.id = id;
+            this.name = name;
+            this.price = price;
+        }
+        public abstract String getSummary();
+
+        public void setId(Long id) {
+            this.id = id;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setPrice(double price) {
+            this.price = price;
+        }
+
+        public Long getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+
     }
-
-    public Product(Long id, String name, double price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
-    public String getSummary(){
-        return "name " + name + " Price " + price;
-    };
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-
-}

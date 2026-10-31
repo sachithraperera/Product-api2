@@ -1,6 +1,8 @@
 package uk.ac.westminster.products_api.controller;
 
 
+import com.sun.jdi.event.StepEvent;
+import com.sun.source.tree.BreakTree;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +11,10 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
-    private List<Product> products =new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
     private Long nextId = 1L;
 
-    public ProductService(){
+    public ProductService() {
         products.add(new DigitalProduct(nextId++,
                 "VirusGuard",
                 4.50,
@@ -27,19 +29,17 @@ public class ProductService {
 //                nextId++, "Plain Product", 85.56));
 
 
-
-
-
     }
 
 
     public List<String> getAllSummaries() {
         List<String> summary = new ArrayList<>();
-        for (Product p : products) {
+        for (Product p : products){
             summary.add(p.getSummary());
-        }
-        return summary;
     }
+    return summary;
+}
+
 
     public List <Product> getAllProducts(){
         return products;
