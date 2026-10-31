@@ -41,6 +41,11 @@ public class ProductController {
     public List<Product> search(@RequestParam String name) { //It reads a query parameter from the URL.
         return productService.findByName(name);
     }
+
+    @GetMapping("/summary")
+    public List<String>getAllSummaries(){
+        return productService.getAllSummaries();
+    }
 }
 
 //    @GetMapping("/{id}")

@@ -12,6 +12,10 @@ public class DigitalProduct extends Product {
         this.downloadUrl=downloadUrl;
         this.fileSizeMB=fileSizeMB;
     }
+//    @Override
+//    public String getSummary(){
+//        return " Name :" + getName() + "Price " + getPrice() + "URL " + downloadUrl;
+//    }
 
     public String getDownloadUrl() {
         return downloadUrl;

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(DigitalProduct.class),
         @JsonSubTypes.Type(PhysicalProduct.class)
 })
-public class Product {
+public abstract class Product {
 
     private Long id;//Long can hold null values where long can't
     private String name;
@@ -23,6 +23,9 @@ public class Product {
         this.name = name;
         this.price = price;
     }
+    public String getSummary(){
+        return "name " + name + " Price " + price;
+    };
 
     public void setId(Long id) {
         this.id = id;

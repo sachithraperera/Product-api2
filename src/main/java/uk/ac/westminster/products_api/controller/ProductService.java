@@ -23,7 +23,24 @@ public class ProductService {
                 1200.45,
                 3,
                 "16x8"));
+//        products.add(new Product(
+//                nextId++, "Plain Product", 85.56));
+
+
+
+
+
     }
+
+
+    public List<String> getAllSummaries() {
+        List<String> summary = new ArrayList<>();
+        for (Product p : products) {
+            summary.add(p.getSummary());
+        }
+        return summary;
+    }
+
     public List <Product> getAllProducts(){
         return products;
     }

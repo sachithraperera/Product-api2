@@ -12,6 +12,10 @@ public class PhysicalProduct extends Product {
         this.weight=weight;
         this.dimensions=dimensions;
     }
+    @Override
+    public String getSummary(){
+        return "Name " + getName() + "Weight " + weight;
+    }
     public double getWeight(){
         return weight;
     }
